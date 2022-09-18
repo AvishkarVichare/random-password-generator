@@ -28,7 +28,12 @@ clipboardEl.addEventListener('click', () => {
             resultEl.style.backgroundColor = 'transparent'
         }, 4000);
     }
-    navigator.clipboard.writeText(copyValue);
+    navigator.clipboard.writeText(copyValue).then(() => {
+        alert('successfully copied');
+    })
+    .catch(() => {
+        alert('something went wrong');
+    });
     
 })
 
